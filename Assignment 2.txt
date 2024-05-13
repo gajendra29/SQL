@@ -1,0 +1,70 @@
+All the query studied till now
+
+use sakila;
+
+show tables;
+select * from actor;
+select * from actor where first_name like "_a_";
+select first_name from actor where last_name like "a%";
+select *from actor;
+select last_update,first_name from actor where first_name like '_AN';
+
+-- general function-----
+select address_id, address2, isnull(address2) from address;
+select count(isnull(address2)) from address;
+select address2,ifnull(address2,"ABC") from address;
+select nullif(address2,null) from address;
+select address_id,nullif(address_id,3) from address;
+
+-- control function-- 
+select address_id,district, if(district="QLD",1,0) from address;
+select address_id,district, if(district="QLD",1,if(district="Alberta",address+5,0)) from address;
+
+select address_id,district,
+	case district
+    when "QLD" then address_id
+    when "Alberta" then address_id+5
+    else "XYZ"
+    end as "NewCol"
+    from address;
+select address_id,district,
+	case 
+    when district="QLD" then address_id
+    when district="Alberta" then address_id+5
+    else "XYZ"
+    end as "NewCol"
+    from address;
+    
+    select address_id, concat(address,' ',district) as "Adress with district",
+    case
+    when address_id>10 and address_id<=20 then "Best district"
+    when address_id >20 and address_id<=30 then "Good district"
+    when address_id >30 then "Excellent"
+    else "Not a best district"
+    end as "Newcal"
+    from address;
+    
+-- group by operations-- 
+-- multi row function --
+
+select * from address;
+select count(*) from address;
+select sum(amount) from payment;
+select sum(amount)/count(amount) from payment;
+select avg(amount) from payment;
+select distinct(customer_id) from payment;
+select sum(amount) from payment where customer_id=1;
+select sum(amount) from payment where customer_id=2;
+select customer_id,count(*) from payment group by customer_id;
+select count(*) from payment where customer_id=1;
+
+
+
+select customer_id,sum(amount) from payment where customer_id>5 group by customer_id;
+select avg(amount) from payment where customer_id=2 and amount>3;
+select count(amount) from payment where payment_id>30 and staff_id=2;
+
+select customer_id,sum(amount) from payment group by customer_id having sum(amount)>90;
+
+select customer_id,amount,count(*) from payment group by customer_id,amount;  -- multi group by operation --
+
