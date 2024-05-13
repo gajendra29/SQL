@@ -1,0 +1,37 @@
+What is database? what are the charactestic of database
+
+Ans)
+A database is an organized collection of data, typically stored and accessed electronically from a computer system. It's designed to efficiently manage, store, retrieve, and update data. Databases are foundational to modern computing and are used in various applications ranging from simple task management systems to large-scale enterprise applications.
+
+Data Storage
+Data Retrieval
+Concurrency Control
+Data Integrity
+Transaction Management
+Security
+Scalability
+Backup and Recovery
+Data Modeling and Schema
+
+
+- Type of database
+Databases can be classified into different types based on their data model, structure, and how they store and retrieve data. Here are some common types of databases:
+
+Relational Databases (RDBMS)
+NoSQL Databases
+NewSQL Databases
+In-memory Databases
+Spatial Databases
+
+
+- What is database management system ( DBMS)
+A Database Management System (DBMS) is software designed to manage, store, retrieve, and manipulate data in a database. It serves as an interface between users and the database, providing a set of tools and utilities to facilitate efficient and secure management of data.
+
+
+- Database  vs DBMS
+A database is an organized collection of data stored electronically in a structured format.
+A Database Management System (DBMS) is software designed to manage, store, retrieve, and manipulate data in a database.
+
+- File system  vs DBMS
+A filesystem organizes and manages data on a computer's storage devices, such as hard drives, solid-state drives, or network storage.
+A DBMS is software designed to manage, store, retrieve, and manipulate structured data in a database.
